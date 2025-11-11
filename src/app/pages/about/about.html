@@ -1,0 +1,22 @@
+<div class="col h-100 d-flex flex-column justify-content-center align-items-center text-center p-4 bg-dark text-white">
+<div class="container my-5">
+  <h2 class="text-center mb-4">Conócenos</h2>
+  <p class="text-center lead">
+    Nuestro equipo está inspirado en los personajes más emblemáticos de Minecraft.
+  </p>
+
+  <div class="row mt-5">
+    @for (persona of equipo; track persona.nombre) {
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ persona.nombre }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ persona.rol }}</h6>
+            <p class="card-text">{{ persona.descripcion }}</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+</div>

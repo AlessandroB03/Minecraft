@@ -1,0 +1,31 @@
+// Variables de colores
+$footer-bg: #343a40;       // Fondo oscuro
+$footer-text: #f8f9fa;     // Texto claro
+$footer-link: #0d6efd;     // Azul Bootstrap
+$footer-link-hover: #ffc107; // Amarillo para hover
+
+// Estilos personalizados
+.footer-custom {
+  background-color: $footer-bg;
+  color: $footer-text;
+
+  h5 {
+    color: $footer-text;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-link {
+    display: block;
+    color: $footer-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $footer-link-hover;
+      text-decoration: underline;
+    }
+  }
+
+  hr {
+    border-color: lighten($footer-bg, 20%);
+  }
+}

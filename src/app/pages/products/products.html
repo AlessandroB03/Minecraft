@@ -1,0 +1,17 @@
+<div class="container my-5">
+  <h2 class="text-center mb-4">Productos</h2>
+  <div class="row">
+    @for (producto of productos; track producto.id) {
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img [src]="producto.imagen" class="card-img-top" [alt]="producto.nombre">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text">{{ producto.descripcion }}</p>
+            <p class="fw-bold">Precio: {{ producto.precio }} monedas</p>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

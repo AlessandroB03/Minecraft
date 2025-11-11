@@ -1,0 +1,27 @@
+// Variables de colores
+$color-primario: #08a337;   // Azul Bootstrap por defecto
+$color-secundario: #6c757d; // Gris Bootstrap
+$color-texto: #ffffff;      // Texto blanco
+$color-hover: #036132;      // Amarillo para hover
+
+// Estilos personalizados
+.navbar-custom {
+  background-color: $color-primario;
+
+  .navbar-brand,
+  .nav-link {
+    color: $color-texto;
+
+    &:hover {
+      color: $color-hover;
+    }
+  }
+
+  .navbar-toggler {
+    border-color: $color-texto;
+
+    .navbar-toggler-icon {
+      background-image: url("/public/favicon.ico");
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.col{
+    background-image: url("/Focus_Cherry.png");
+}
+h2 {
+  color: #00ff37; // verde estilo Minecraft
+  font-weight: bold;
+}
+
+.card {
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+}
