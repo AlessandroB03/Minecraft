@@ -103,5 +103,11 @@
         }
       }
     }
+<<<<<<< HEAD
+=======
+  },
+  "cli": {
+    "analytics": "d069d68c-47d4-4769-8275-dc9f836be70c"
+>>>>>>> a028e38 (Corrigiendo contact.ts y validaciones)
   }
 }
