@@ -17,6 +17,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/MinePage",
+            "baseHref": "/Minecraft/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -100,14 +102,17 @@
               "src/styles.scss"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://AlessandroB03.github.io/Minecraft/"
+          }
         }
       }
     }
-<<<<<<< HEAD
-=======
   },
   "cli": {
     "analytics": "d069d68c-47d4-4769-8275-dc9f836be70c"
->>>>>>> a028e38 (Corrigiendo contact.ts y validaciones)
   }
 }

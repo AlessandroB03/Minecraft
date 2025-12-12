@@ -1,0 +1,73 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <h2 class="text-center mb-4">¿Tienes dudas? ¡Contáctanos!</h2>
+      <p class="text-center text-muted mb-4">
+        Estamos aquí para ayudarte con tu pedido, tallas o cualquier consulta sobre moda.
+      </p>
+
+      <form [formGroup]="contactForm" (ngSubmit)="enviar()" novalidate>
+        
+        <!-- Nombre -->
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre Completo</label>
+          <input id="nombre" type="text" class="form-control" formControlName="nombre"
+            [class.is-invalid]="f['nombre'].invalid && f['nombre'].touched" />
+          <div class="invalid-feedback" *ngIf="f['nombre'].touched && f['nombre'].errors">
+            <div *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio.</div>
+            <div *ngIf="f['nombre'].errors?.['minlength']">
+              Mínimo {{ f['nombre'].errors?.['minlength']?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input id="email" type="email" class="form-control" formControlName="email"
+            [class.is-invalid]="f['email'].invalid && f['email'].touched" />
+          <div class="invalid-feedback" *ngIf="f['email'].touched && f['email'].errors">
+            <div *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</div>
+            <div *ngIf="f['email'].errors?.['email']">Formato de correo inválido.</div>
+          </div>
+        </div>
+
+        <!-- Asunto -->
+        <div class="mb-3">
+          <label for="asunto" class="form-label">Asunto</label>
+          <input id="asunto" type="text" class="form-control" formControlName="asunto"
+            [class.is-invalid]="f['asunto'].invalid && f['asunto'].touched" />
+          <div class="invalid-feedback" *ngIf="f['asunto'].touched && f['asunto'].errors">
+            <div *ngIf="f['asunto'].errors?.['required']">El asunto es obligatorio.</div>
+            <div *ngIf="f['asunto'].errors?.['minlength']">
+              Mínimo {{ f['asunto'].errors?.['minlength']?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Tu Mensaje</label>
+          <textarea id="mensaje" rows="4" class="form-control" formControlName="mensaje"
+            [class.is-invalid]="f['mensaje'].invalid && f['mensaje'].touched"></textarea>
+          <div class="invalid-feedback" *ngIf="f['mensaje'].touched && f['mensaje'].errors">
+            <div *ngIf="f['mensaje'].errors?.['required']">El mensaje es obligatorio.</div>
+            <div *ngIf="f['mensaje'].errors?.['minlength']">
+              Mínimo {{ f['mensaje'].errors?.['minlength']?.requiredLength }} caracteres.
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary flex-fill" [disabled]="submitting">
+            Enviar Mensaje
+          </button>
+          <button type="button" class="btn btn-secondary flex-fill" (click)="cancelar()" [disabled]="submitting">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
